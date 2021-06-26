@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 import dj_database_url
 import raven
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,10 +27,7 @@ SECRET_KEY = "c@n%u@91tum=@j392g20b8znh7dqfo-v%81))gxbbmu$=dy_*)"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # SECURITY WARNING: don't run with debug turned on in production!
-if os.environ.get('ENV') == 'PRODUCTION':
-    DEBUG = False
-else:
-    DEBUG = True
+DEBUG = True
 
 ALLOWED_HOSTS = ['185.98.139.132']
 
@@ -112,18 +110,6 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
-if os.environ.get('ENV') == 'PRODUCTION':
-
-    # Static files settings
-    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-
-    STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-
-    # Extra places for collectstatic to find static files.
-    STATICFILES_DIRS = (
-        os.path.join(PROJECT_ROOT, 'static'),
-    )
-
 
 ROOT_URLCONF = 'purBeurre_project.urls'
 
@@ -200,16 +186,5 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-#if os.environ.get('ENV') == 'PRODUCTION':
-        # ...
-        # Simplified static file serving.
-        # https://warehouse.python.org/project/whitenoise/
-        # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-if os.environ.get('ENV') == 'PRODUCTION':
-    # ...
-    db_from_env = dj_database_url.config(conn_max_age=500)
-    DATABASES['default'].update(db_from_env)
 
 AUTHENTICATION_BACKENDS = ['authentification.views.EmailBackend']
