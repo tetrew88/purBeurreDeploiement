@@ -56,7 +56,7 @@ class TestSeleniumAuthentification(StaticLiveServerTestCase):
 		""" test login parcours """
 		self.selenium.get('%s%s' % (self.live_server_url, '/'))
 		
-		time.sleep(3)
+		time.sleep(5)
 		self.selenium.find_element_by_xpath("//button[contains(@class,'fa fa-user fa-2x')]").click()
 
 		username_input = self.selenium.find_element_by_name("mail")
@@ -70,7 +70,7 @@ class TestSeleniumAuthentification(StaticLiveServerTestCase):
 		""" test an invalid login parcours """
 		self.selenium.get('%s%s' % (self.live_server_url, '/'))
 		
-		time.sleep(3)
+		time.sleep(5)
 		self.selenium.find_element_by_xpath("//button[contains(@class,'fa fa-user fa-2x')]").click()
 
 		username_input = self.selenium.find_element_by_name("mail")
