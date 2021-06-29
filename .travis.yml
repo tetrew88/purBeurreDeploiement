@@ -5,8 +5,8 @@ python:
   - '3.6'
   
 addons:
-  - firefox: "60.0"
-  - postgresql: "11"
+  firefox: "60.0"
+  postgresql: "11"
   apt:
     packages:
     - postgresql-11
