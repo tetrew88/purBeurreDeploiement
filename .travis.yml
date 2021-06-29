@@ -7,8 +7,8 @@ branches:
     - staging
 
 before_script:
-  - psql -c "CREATE USER test WITH PASSWORD 'test';" -U postgres
-  - psql -U postgres -c "ALTER USER test CREATEDB;"
+  - psql -c "CREATE USER tetrew WITH PASSWORD 'test';" -U postgres
+  - psql -U postgres -c "ALTER USER tetrew CREATEDB;"
   - pip3 install -r requirements.txt
 
 services:
