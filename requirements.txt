@@ -6,3 +6,4 @@ whitenoise==5.1.0
 dj_database_url==0.5.0
 newrelic==6.4.3.160
 raven==6.10.0
+selenium==3.141.0
