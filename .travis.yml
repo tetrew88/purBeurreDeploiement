@@ -9,6 +9,7 @@ addons:
   postgresql: "11"
   apt:
     packages:
+    - dpkg
     - postgresql-11
     - postgresql-client-11
 
