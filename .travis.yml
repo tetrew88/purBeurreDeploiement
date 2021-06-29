@@ -7,8 +7,8 @@ branches:
     - staging
 
 before_script:
-  - psql -c "CREATE USER tetrew WITH PASSWORD 'Doni88650';" -U postgres
-  - psql -U postgres -c "ALTER USER tetrew CREATEDB;"
+  - psql -c "CREATE USER test WITH PASSWORD 'test';" -U postgres
+  - psql -U postgres -c "ALTER USER test CREATEDB;"
   - pip3 install tchappui-webdrivers
   - pip3 install -r requirements.txt
   - install-webdrivers --path /usr/local/bin
