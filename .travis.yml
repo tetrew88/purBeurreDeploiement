@@ -1,23 +1,21 @@
 sudo: required
-dist: trusty
+dist: xenial
 language: python
 python:
   - '3.6'
   
 addons:
   firefox: "60.0"
-  postgresql: "11"
-  apt:
-    packages:
-    - dpkg
-    - postgresql-11
-    - postgresql-client-11
+  
+services:
+  - postgresql
 
 branches:
   only:
     - staging
     
 before_install:
+- sudo apt-get -qq update
 - sudo apt-get clean
 - sudo apt-get install dpkg
 - sudo apt-get install dbus-x11
