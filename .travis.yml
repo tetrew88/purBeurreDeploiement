@@ -16,11 +16,7 @@ branches:
   only:
     - staging
     
-services:
-  - postgresql
-    
 before_install:
-- update postgresql 
 - sudo apt-get clean
 - sudo apt-get install dpkg
 - sudo apt-get install dbus-x11
