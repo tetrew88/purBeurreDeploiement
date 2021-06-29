@@ -11,7 +11,11 @@ branches:
   only:
     - staging
     
+services:
+  - postgresql
+    
 before_install:
+- update postgresql 
 - sudo apt-get clean
 - sudo apt-get install dpkg
 - sudo apt-get install dbus-x11
@@ -32,9 +36,6 @@ before_script:
   - psql -c "CREATE USER tetrew WITH PASSWORD 'test';" -U postgres
   - psql -U postgres -c "ALTER USER tetrew CREATEDB;"
   - pip3 install -r requirements.txt
-
-services:
-  - postgresql
 
 env: DJANGO_SETTINGS_MODULE=purBeurre_project.settings
 
