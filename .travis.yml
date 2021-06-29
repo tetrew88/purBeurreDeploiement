@@ -7,11 +7,9 @@ branches:
     - staging
 
 before_script:
-  - psql -c "CREATE USER tetrew WITH PASSWORD 'Doni88650';" -U postgres
-  - psql -U postgres -c "ALTER USER tetrew CREATEDB;"
-  - pip3 install tchappui-webdrivers
+  - psql -c "CREATE USER test WITH PASSWORD 'test';" -U postgres
+  - psql -U postgres -c "ALTER USER test CREATEDB;"
   - pip3 install -r requirements.txt
-  - install-webdrivers --path /usr/local/bin
 
 services:
   - postgresql
@@ -20,20 +18,3 @@ env: DJANGO_SETTINGS_MODULE=purBeurre_project.settings
 
 script:
   - python3 manage.py test
-  self = <selenium.webdriver.chrome.service.Service object at 0x7f9074f3ba30>
-    def start(self):
-        """
-        Starts the Service.
-    
-        :Exceptions:
-         - WebDriverException : Raised either when it can't start the service
-           or when it can't connect to the service
-        """
-        try:
-            cmd = [self.path]
-            cmd.extend(self.command_line_args())
->           self.process = subprocess.Popen(cmd, env=self.env,
-                                            close_fds=platform.system() != 'Windows',
-                                            stdout=self.log_file,
-                                            stderr=self.log_file,
-                                            stdin=PIPE)
