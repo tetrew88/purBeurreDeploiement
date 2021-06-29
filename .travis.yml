@@ -12,7 +12,6 @@ branches:
     - staging
     
 before_install:
-- sudo apt-get -qq update
 - sudo apt-get install dbus-x11
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
