@@ -13,7 +13,6 @@ branches:
     
 before_install:
 - sudo apt-get clean
-- sudo apt-get update
 - sudo apt-get install dpkg
 - sudo apt-get install dbus-x11
 - export DISPLAY=:99.0
