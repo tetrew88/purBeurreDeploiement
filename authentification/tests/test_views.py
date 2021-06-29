@@ -1,6 +1,8 @@
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
 
+import time
+
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium.webdriver.firefox.webdriver import WebDriver
 
@@ -52,6 +54,7 @@ class TestSeleniumAuthentification(StaticLiveServerTestCase):
 
 	def test_login(self):
 		""" test login parcours """
+		time.sleep(3)
 		self.selenium.get('%s%s' % (self.live_server_url, '/'))
 		self.selenium.find_element_by_xpath("//button[contains(@class,'fa fa-user fa-2x')]").click()
 
@@ -64,6 +67,7 @@ class TestSeleniumAuthentification(StaticLiveServerTestCase):
 
 	def test_invalid_login(self):
 		""" test an invalid login parcours """
+		time.sleep(3)
 		self.selenium.get('%s%s' % (self.live_server_url, '/'))
 		self.selenium.find_element_by_xpath("//button[contains(@class,'fa fa-user fa-2x')]").click()
 
