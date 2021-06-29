@@ -18,5 +18,3 @@ env: DJANGO_SETTINGS_MODULE=purBeurre_project.settings
 
 script:
   - python3 manage.py test
-                                            stderr=self.log_file,
-                                            stdin=PIPE)
