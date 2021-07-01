@@ -10,8 +10,6 @@ services:
 branches:
   only:
     - staging
-    
-- MOZ_HEADLESS=1
 
 addons:
   firefox: latest
